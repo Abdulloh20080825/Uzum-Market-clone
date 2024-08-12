@@ -72,7 +72,7 @@ const Header = () => {
 					</div>
 				</div>
 			</div>
-			<div className='w-full fixed bottom-0 lg:hidden'>
+			<div className='w-full fixed bottom-0 lg:hidden z-10 bg-white w-full'>
 				<Footer />
 			</div>
 		</header>
