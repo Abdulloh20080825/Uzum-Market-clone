@@ -5,6 +5,7 @@ import { FaRegHeart } from 'react-icons/fa';
 import { SlBasket } from 'react-icons/sl';
 import { IoIosSearch } from 'react-icons/io';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 	return (
@@ -41,12 +42,14 @@ const Header = () => {
 				</div>
 			</div>
 			<div className='sticky top-0 flex justify-between'>
-				<div className='hidden lg:flex items-center space-x-2 cursor-pointer'>
-					<img src={uzum_logo} alt='' width={50} className='rounded-[50%]' />
-					<p className='text-xl font-bold tracking-widest text-purple-600 uppercase'>
-						Uzum Market
-					</p>
-				</div>
+				<Link to={'/'}>
+					<div className='hidden lg:flex items-center space-x-2 cursor-pointer'>
+						<img src={uzum_logo} alt='' width={50} className='rounded-[50%]' />
+						<p className='text-xl font-bold tracking-widest text-purple-600 uppercase'>
+							Uzum Market
+						</p>
+					</div>
+				</Link>
 				<form className='w-screen lg:w-2/4 border z-10 border-slate-500 flex justify-between items-center rounded-md'>
 					<input
 						type='search'
@@ -62,14 +65,18 @@ const Header = () => {
 				</form>
 
 				<div className='hidden lg:flex space-x-4 items-center'>
-					<div className='flex items-center space-x-2 cursor-pointer'>
-						<FaRegHeart />
-						<p>Избранное</p>
-					</div>
-					<div className='flex items-center space-x-2 cursor-pointer'>
-						<SlBasket />
-						<p>Корзина</p>
-					</div>
+					<Link to={'/favourite'}>
+						<div className='flex items-center space-x-2 cursor-pointer'>
+							<FaRegHeart />
+							<p>Избранное</p>
+						</div>
+					</Link>
+					<Link to={'/cart'}>
+						<div className='flex items-center space-x-2 cursor-pointer'>
+							<SlBasket />
+							<p>Корзина</p>
+						</div>
+					</Link>
 				</div>
 			</div>
 			<div className='w-full fixed bottom-0 lg:hidden z-10 bg-white w-full'>
